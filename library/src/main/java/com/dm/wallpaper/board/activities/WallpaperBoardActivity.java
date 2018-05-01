@@ -78,6 +78,7 @@ import com.github.javiersantos.materialstyleddialogs.enums.Style;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.AdView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageSize;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
@@ -136,6 +137,8 @@ public abstract class WallpaperBoardActivity extends AppCompatActivity implement
     private ActivityConfiguration mConfig;
 
     private InterstitialAd interstitial;
+	
+	private AdView mAdView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -145,14 +148,29 @@ public abstract class WallpaperBoardActivity extends AppCompatActivity implement
         setContentView(R.layout.activity_wallpaper_board);
         startHandler();
 
+       // Interstitial Ad
+		// Initialize the Mobile Ads SDK.
         MobileAds.initialize(this, (getString(R.string.admob_app_id)));
-
         // Prepare new ad
         interstitial = new InterstitialAd(getApplicationContext());
         // Ad unit ID
         interstitial.setAdUnitId(getString(R.string.admob_interstitial_id));
         // Load Ad
         loadInterstitial();
+		// End Interstitial Ad
+
+        // Banner Ad
+		// Initialize the Mobile Ads SDK.
+		MobileAds.initialize(this, (getString(R.string.admob_app_id)));
+        // Gets the ad view defined in layout/ad_fragment.xml with ad unit ID set in
+        // values/strings.xml.
+        mAdView = findViewById(R.id.ad_view);
+        // Create an ad request.
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        // Start loading the ad in the background.
+        mAdView.loadAd(adRequest);
+        // End Banner Admob
 
         AppUpdater appUpdater = new AppUpdater(this);
         appUpdater.start();
@@ -477,6 +495,12 @@ public abstract class WallpaperBoardActivity extends AppCompatActivity implement
             } else if (id == R.id.navigation_view_rate) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(
                         "https://play.google.com/store/apps/details?id=" +getPackageName()));
+                intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
+                startActivity(intent);
+                return false;
+				
+            }	else if (id == R.id.navigation_view_pro) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse( getResources().getString(R.string.pro_app_url)));
                 intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
                 startActivity(intent);
                 return false;

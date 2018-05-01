@@ -122,14 +122,17 @@
     <string name="app_version">v1.0</string>
 
     <!-- Your Admob App ID -->
-    <string name="admob_app_id">ca-app-pub-xxxxxxxxxxxxxxxx/xxxxxxxxxx</string>
+    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
 
     <!-- Your Interstitial Ad Unit ID (current ad unit ID is from google for testing purposes) -->
     <string name="admob_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
 
     <!-- Your Device Test ID (This is to test your ads without getting banned) -->
     <!-- If you don't know your device test Id then search for it on web -->
-    <string name="admob_testdevice_id">xxxxxxxxxxxxxxxxxxxxxxxxxx</string>
+    <string name="admob_testdevice_id">33BE2250B43518CCDA7DE426D04EE231</string>
+	
+	<!-- This is an ad unit ID for a test ad. Replace with your own banner ad unit id. -->
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
 
     <!-- ======================================================================================= -->
     <!-- Show ads in between min and max value randomly when user clicks on Apply Wallpaper button -->
@@ -161,6 +164,7 @@
     <string name="dialog_btn_no">Not Now</string>
     <!-- Pro App Link -->
     <string name="pro_app_url">https://google.com</string>
+	<string name="navigation_view_pro">Buy Pro! No Ads!</string>
 
     <!-- ======================================================================================= -->
     <!-- Ad Blocker Prevention Dialog -->

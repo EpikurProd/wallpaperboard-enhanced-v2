@@ -130,6 +130,9 @@
     <!-- Your Device Test ID (This is to test your ads without getting banned) -->
     <!-- If you don't know your device test Id then search for it on web -->
     <string name="admob_testdevice_id">xxxxxxxxxxxxxxxxxxxxxxxxxx</string>
+	
+	<!-- This is an ad unit ID for a test ad. Replace with your own banner ad unit id. -->
+    <string name="banner_ad_unit_id">ca-app-pub-xxxxxxxxxxxxxxxx/xxxxxxxxxx</string>
 
     <!-- ======================================================================================= -->
     <!-- Show ads in between min and max value randomly when user clicks on Apply Wallpaper button -->
@@ -152,6 +155,7 @@
     <string name="ad_closemin_count">2</string>
     <!-- Max Number -->
     <string name="ad_closemax_count">5</string>
+	
     <!-- ======================================================================================= -->
     <!-- Buy Pro Dialog -->
     <string name="dialog_title">Don\'t like ads?</string>
@@ -160,6 +164,7 @@
     <string name="dialog_btn_no">Not Now</string>
     <!-- Pro App Link -->
     <string name="pro_app_url">https://google.com</string>
+	<string name="navigation_view_pro">Buy Pro! No Ads!</string>
 
     <!-- ======================================================================================= -->
     <!-- Ad Blocker Prevention Dialog -->

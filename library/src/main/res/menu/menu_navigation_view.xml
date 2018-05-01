@@ -35,6 +35,11 @@
             android:title="@string/navigation_view_donate"/>
 
         <item
+            android:id="@+id/navigation_view_pro"
+            android:icon="@drawable/ic_drawer_pro"
+            android:title="@string/navigation_view_pro"/>
+
+        <item
             android:id="@+id/navigation_view_share"
             android:icon="@drawable/ic_drawer_share"
             android:title="@string/navigation_view_share"/>
